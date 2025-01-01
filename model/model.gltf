@@ -1,0 +1,132 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter r171"
+  },
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0,
+        2
+      ]
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "name": "Headdddd.obj"
+    },
+    {
+      "name": "Head",
+      "mesh": 0
+    },
+    {
+      "name": "centeredHead.obj",
+      "children": [
+        1
+      ]
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 432,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 432,
+      "byteLength": 432,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 864,
+      "byteLength": 288,
+      "target": 34962,
+      "byteStride": 8
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1152,
+      "uri": "data:application/octet-stream;base64,dGepvg9vsD4bL52+dGepvpiwsD5KDKI+3lCVPpiwsD5KDKI+dGepvg9vsD4bL52+3lCVPpiwsD5KDKI+3lCVPg9vsD4bL52+3lCVPpiwsD5KDKI+dGepvpiwsD5KDKI+dGepvgzAjL5KDKI+3lCVPpiwsD5KDKI+dGepvgzAjL5KDKI+3lCVPgzAjL5KDKI+WA+VPpiwsD6kcJ2+3lCVPpiwsD5KDKI+3lCVPgzAjL5KDKI+WA+VPpiwsD6kcJ2+3lCVPgzAjL5KDKI+WA+VPgzAjL6kcJ2+huqpvpiwsD6kcJ2+WA+VPpiwsD6kcJ2+WA+VPgzAjL6kcJ2+huqpvpiwsD6kcJ2+WA+VPgzAjL6kcJ2+huqpvgzAjL6kcJ2+dGepvgzAjL5KDKI+dGepvpiwsD5KDKI+dGepvpiwsD6kcJ2+dGepvgzAjL5KDKI+dGepvpiwsD6kcJ2+dGepvgzAjL6kcJ2+9NOVPpUBjb7l0KI+9NOVPgzAjL5t55u+dGepvgzAjL5t55u+9NOVPpUBjb7l0KI+dGepvgzAjL5t55u+dGepvpUBjb7l0KI+AAAAAPv/fz8mOVK6AAAAAPv/fz8mOVK6AAAAAPv/fz8mOVK6AAAAAPv/fz8mOVK6AAAAAPv/fz8mOVK6AAAAAPv/fz8mOVK6AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/+/9/PwAAAAAEDFK6+/9/PwAAAAAEDFK6+/9/PwAAAAAEDFK6+/9/PwAAAAAEDFK6+/9/PwAAAAAEDFK6+/9/PwAAAAAEDFK6AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAAAAAPv/fz+XjlI6AAAAAPv/fz+XjlI6AAAAAPv/fz+XjlI6AAAAAPv/fz+XjlI6AAAAAPv/fz+XjlI6AAAAAPv/fz+XjlI6f80APgAAgD9/zQA+285fP3gcgD7bzl8/f80APgAAgD94HIA+285fP3gcgD4AAIA/eByAPtvOXz9/zQA+285fP3/NAD5UE0A/eByAPtvOXz9/zQA+VBNAP3gcgD5UE0A/D9K/PtvOXz94HIA+285fP3gcgD5UE0A/D9K/PtvOXz94HIA+VBNAPw/Svz5UE0A/G/L/PtvOXz8P0r8+285fPw/Svz5UE0A/G/L/PtvOXz8P0r8+VBNAPxvy/z5UE0A/f80APlQTQD9/zQA+285fP5MGjjnbzl8/f80APlQTQD+TBo45285fPwAGjjlUE0A/D9K/PoMMYD8P0r8+AACAP3NzgD4AAIA/D9K/PoMMYD9zc4A+AACAP3NzgD6DDGA/"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 36,
+      "max": [
+        0.29263269901275635,
+        0.34509730339050293,
+        0.3179999887943268
+      ],
+      "min": [
+        -0.33186739683151245,
+        -0.275402694940567,
+        -0.3075000047683716
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 36,
+      "max": [
+        0.9999997019767761,
+        0.9999997019767761,
+        1
+      ],
+      "min": [
+        -1,
+        0,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 36,
+      "max": [
+        0.49989399313926697,
+        1
+      ],
+      "min": [
+        0.00027088820934295654,
+        0.7502949237823486
+      ],
+      "type": "VEC2"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "name": "Mat0"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "material": 0
+        }
+      ]
+    }
+  ]
+}

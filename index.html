@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Head Skin Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="divTop">
+    <h4>MC Head Skin Viewer</h4>
+  </div>
+  <div id="container-3d">
+    <!-- CANVAS HERE -->
+  </div>
+  <div class="sheesh">
+    <input type="range" id="slider-zoom" min="48" max="50" step="0.001"/>
+    <button id="Button-Download">Capture and Save</button>
+    <label for="Skin-Upload" class="custom-file-label">Choose Skin File</label>
+    <input type="file" id="Skin-Upload" accept=".png" class="custom-file-input"/>
+    <div class="checkbox-container">
+      <label for="isOverlay" id="textCheckbox">Overlay On</label>
+      <input type="checkbox" id="isOverlay"/>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
