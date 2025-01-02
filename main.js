@@ -31,13 +31,13 @@ scene.add(AMlight);
 // Orbit Controls
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 camera.position.set(0, 1, 60);
-camera.fov = 101 - 50 * 2;
 camera.updateProjectionMatrix();
 
 controls.enablePan = false;
 controls.enableZoom = false;
 controls.enableDamping = true;
 controls.update();
+controls.addEventListener('change', saveSettings);
 
 // Variables for Models
 let overlayModel = null;
@@ -47,11 +47,16 @@ let notOverlayModel = null;
 const textureLoader = new THREE.TextureLoader();
 
 /* === Model Loading === */
+
 function loadModels() {
+  return new Promise((resolve, reject) => {
+    
+  
   const loader = new THREE.GLTFLoader();
 
   // Load Non-Overlay Model
   loader.load('./model/model.gltf', (gltf) => {
+    resolve(gltf);
     notOverlayModel = gltf.scene;
     configureModelMaterial(notOverlayModel);
     scene.add(notOverlayModel);
@@ -60,13 +65,20 @@ function loadModels() {
 
   // Load Overlay Model
   loader.load('./model/FinalHeadLayer.gltf', (gltf) => {
+    resolve(gltf);
     overlayModel = gltf.scene;
     configureModelMaterial(overlayModel);
     overlayModel.visible = false;
     scene.add(overlayModel);
     toggleModelVisibility();
   });
+  
+});
+  
 }
+
+
+
 
 // Configure Materials for Default Models
 function configureModelMaterial(model) {
@@ -90,7 +102,10 @@ function toggleModelVisibility() {
     labelCheckbox.innerHTML = isOverlayChecked.checked
       ? 'Overlay On'
       : 'Overlay Off';
+    
+    
   }
+  saveSettings();
 }
 
 /* === Texture Handling === */
@@ -163,6 +178,8 @@ SliderFov.addEventListener('input', () => {
   const percentage = ((value - min) / (max - min)) * 100;
 
   SliderFov.style.background = `linear-gradient(to right, #4CAF50 ${percentage}%, #ccc ${percentage}%)`;
+  
+  saveSettings();
 });
 
 // Initialize Default SliderStyle
@@ -178,6 +195,51 @@ ButtonDownload.addEventListener('click', () => {
   link.click();
 });
 
+function saveSettings(){
+  localStorage.setItem("fov", SliderFov.value);
+  localStorage.setItem("isoverlay", isOverlayChecked.checked);
+  localStorage.setItem("cameraAngleX", JSON.stringify(camera.position.x));
+  localStorage.setItem("cameraAngleY", JSON.stringify(camera.position.y));
+  localStorage.setItem("cameraAngleZ", JSON.stringify(camera.position.z));
+}
+
+function loadSettings(){
+  const savedFov = localStorage.getItem("fov");
+  const savedIsoverlay = localStorage.getItem("isoverlay");
+  const savedCamX = localStorage.getItem("cameraAngleX");
+  const savedCamY = localStorage.getItem("cameraAngleY");
+  const savedCamZ = localStorage.getItem("cameraAngleZ");
+  
+  
+  
+  if(savedFov !== null){
+    SliderFov.value = savedFov;
+    camera.fov = 101 - savedFov * 2;
+    camera.updateProjectionMatrix();
+    renderer.render(scene, camera);
+    console.log(savedFov)
+    
+    const value = SliderFov.value;
+    const max = SliderFov.max;
+    const min = SliderFov.min;
+    const percentage = ((value - min) / (max - min)) * 100;
+
+    SliderFov.style.background = `linear-gradient(to right, #4CAF50 ${percentage}%, #ccc ${percentage}%)`;
+  
+  }
+  
+  if(savedCamX && savedCamY){
+    camera.position.x = JSON.parse(savedCamX);
+    camera.position.y = JSON.parse(savedCamY);
+    camera.position.z = JSON.parse(savedCamZ);
+  }
+  
+  if(savedIsoverlay !== null){
+    isOverlayChecked.checked = savedIsoverlay === 'true';
+  }
+}
+
+
 /* === Animation Loop === */
 function animate() {
   requestAnimationFrame(animate);
@@ -191,6 +253,7 @@ function init() {
   loadModels();
   SliderFov.value = 90;
   containerDiv.style.display = 'block';
+  loadSettings();
   animate();
 }
 
