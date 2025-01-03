@@ -232,6 +232,9 @@ function loadSettings(){
     camera.position.x = JSON.parse(savedCamX);
     camera.position.y = JSON.parse(savedCamY);
     camera.position.z = JSON.parse(savedCamZ);
+  } else{
+    camera.position.x = -35.10;
+    camera.position.y = 30.10;
   }
   
   if(savedIsoverlay !== null){
